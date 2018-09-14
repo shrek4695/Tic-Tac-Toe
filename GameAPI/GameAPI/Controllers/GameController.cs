@@ -170,10 +170,10 @@ namespace GameAPI.Controllers
                     using (var responseWriter = new StreamWriter(HttpContext.Response.Body))
                     {
                         GetStatus();
+                        preplayer = apiKey;
+                        visited[boxid - 1] = true;
                         if (winner == null)
                         {
-                            preplayer = apiKey;
-                            visited[boxid - 1] = true;
                             responseWriter.Write("Move Successful");
                         }
                         else if (winner == "Draw")
